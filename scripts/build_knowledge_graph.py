@@ -79,6 +79,5 @@ def main():
     print(f"  图谱已优化为显示前{top_n}%高频实体，确保可视化清晰美观")
 
 
-
 if __name__ == "__main__":
     main()
