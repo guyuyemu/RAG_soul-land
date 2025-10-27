@@ -13,8 +13,8 @@ class YunWuAIClient:
     
     def __init__(
         self, 
-        api_key: str = "sk-e4dRuupKrHvNG3gQ7VMBsOmhNGYFxlxbPz9CVclMMFbyCnfG",
-        api_url: str = "https://yunwu.ai/v1/chat/completions"
+        api_key,
+        api_url
     ):
         """
         初始化云武AI客户端

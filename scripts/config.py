@@ -16,12 +16,12 @@ class RAGConfig:
     CUSTOM_WORDS = CUSTOM_WORDS
     
     # bge-large-zh-v1.5是专为中文优化的高质量嵌入模型
-    EMBEDDING_MODEL_NAME = "/data/xyq-rag/rag-framework/bge-large-zh-v1.5"
+    EMBEDDING_MODEL_NAME = "bge-large-zh-v1.5"
     #本地部署
-    #LLM_API_URL = "http://36.213.46.197:5000/api/infer"
+    #LLM_API_URL = "本地地址"
     #调用API
-    LLM_API_URL = "https://yunwu.ai/v1/chat/completions"
-    LLM_API_KEY = "sk-e4dRuupKrHvNG3gQ7VMBsOmhNGYFxlxbPz9CVclMMFbyCnfG"
+    LLM_API_URL = "LLM_API_URL"
+    LLM_API_KEY = "LLM_API_KEY"
     # 检索配置
     DEFAULT_TOP_K = 10  # 默认检索返回的文档块数量
     RERANK_TOP_K = 6  # 重排序后返回的文档块数量
