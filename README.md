@@ -30,7 +30,7 @@
 
 ## 📦 安装依赖
 
-\`\`\`bash
+\`\`\`
 pip install -r requirements.txt
 \`\`\`
 
@@ -43,6 +43,7 @@ pip install -r requirements.txt
 \`\`\`
 documents/
 ├── 斗罗大陆_第1章.txt
+
 ├── 斗罗大陆_第2章.txt
 └── ...
 \`\`\`
