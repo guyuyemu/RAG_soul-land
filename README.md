@@ -58,6 +58,11 @@ documents/
 
 EMBEDDING_MODEL_NAME = "path/to/bge-large-zh-v1.5"
 
+LLM_API_URL = "LLM_API_URL"
+
+LLM_API_KEY = "LLM_API_KEY"
+
+建议使用deepseek
 
 ### 3. 配置自定义词典
 
