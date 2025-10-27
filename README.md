@@ -42,6 +42,7 @@ pip install -r requirements.txt
 
 \`\`\`
 documents/
+
 ├── 斗罗大陆_第1章.txt
 
 ├── 斗罗大陆_第2章.txt
@@ -53,7 +54,7 @@ documents/
 
 编辑 `config.py`，设置本地模型路径：
 
-\`\`\`python
+\`\`\`
 EMBEDDING_MODEL_NAME = "path/to/bge-large-zh-v1.5"
 \`\`\`
 
@@ -61,7 +62,7 @@ EMBEDDING_MODEL_NAME = "path/to/bge-large-zh-v1.5"
 
 在 `custom_words.py` 中添加领域专有名词：
 
-\`\`\`python
+\`\`\`
 custom_words = [
     "唐门",
     "唐三", 
@@ -74,7 +75,7 @@ custom_words = [
 
 ### 4. 运行 RAG 系统
 
-\`\`\`bash
+\`\`\`
 python main.py
 \`\`\`
 
@@ -86,7 +87,7 @@ python main.py
 
 ### 5. 生成知识图谱
 
-\`\`\`bash
+\`\`\`
 python build_knowledge_graph.py
 \`\`\`
 
@@ -256,16 +257,27 @@ kg.export_graphml("output/graph.graphml")
 
 \`\`\`
 scripts/
+
 ├── config.py                    # 配置文件
+
 ├── custom_words.py              # 配置专有词
+
 ├── text_processor.py            # 文本处理（jieba 分词）
+
 ├── retriever.py                 # 检索器（bge-large-zh-v1.5）
+
 ├── reranker.py                  # 重排序器
+
 ├── generator.py                 # LLM 生成器
+
 ├── cache_manager.py             # 缓存管理
+
 ├── knowledge_graph.py           # 知识图谱构建
+
 ├── rag_system.py                # RAG 系统主类
+
 ├── main.py                      # 主程序入口
+
 ├── build_knowledge_graph.py     # 知识图谱生成脚本
 
 \`\`\`
