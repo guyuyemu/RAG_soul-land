@@ -65,7 +65,7 @@ def main():
     
     interactive_path = kg_builder.visualize_interactive(
         output_path=str(output_dir / "knowledge_graph.html"),
-        top_n=10  
+        top_n =10
     )
     
     # 完成

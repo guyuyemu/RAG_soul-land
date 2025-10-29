@@ -333,13 +333,13 @@ class KnowledgeGraphBuilder:
 
         return neighbors
 
-    def visualize_interactive(self, output_path: str = "knowledge_graph.html", top_n: int = 10) -> str:
+    def visualize_interactive(self, output_path: str = "knowledge_graph.html", top_n: int=10) -> str:
         """
         生成交互式知识图谱网页（使用pyvis）- 美化版
 
         参数:
             output_path: 输出HTML文件路径
-            top_n: 显示前N个高频实体（默认500个）
+            top_n: 显示前N%个高频实体
 
         返回:
             输出文件路径

@@ -11,7 +11,7 @@ from typing import Optional, Dict, Any
 class LocalLLMClient:
     """本地大模型客户端类"""
     
-    def __init__(self, api_url):
+    def __init__(self, api_url: str ):
         """
         初始化本地LLM客户端
         

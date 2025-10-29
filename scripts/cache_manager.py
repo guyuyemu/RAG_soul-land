@@ -1,10 +1,10 @@
 """
 缓存管理模块 - 管理查询缓存
 """
-
 import json
 from pathlib import Path
 from typing import Dict, Optional
+
 
 class CacheManager:
     """缓存管理器 - 管理查询结果缓存，提升重复查询的响应速度"""
