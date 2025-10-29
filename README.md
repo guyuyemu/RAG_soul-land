@@ -30,9 +30,9 @@
 
 ## 📦 安装依赖
 
-\`\`\`bash
+
 pip install -r requirements.txt
-\`\`\`
+
 
 ## 🚀 快速开始
 
@@ -40,27 +40,35 @@ pip install -r requirements.txt
 
 将文本文件放入 `documents/` 目录：
 
-\`\`\`
+
 documents/
+
 ├── 斗罗大陆_第1章.txt
+
 ├── 斗罗大陆_第2章.txt
-└── ...
-\`\`\`
+└── 
+...
+
 
 **数据集已上传，可以直接使用**
 ### 2. 配置模型路径
 
 编辑 `config.py`，设置本地模型路径：
 
-\`\`\`python
+
 EMBEDDING_MODEL_NAME = "path/to/bge-large-zh-v1.5"
-\`\`\`
+
+LLM_API_URL = "LLM_API_URL"
+
+LLM_API_KEY = "LLM_API_KEY"
+
+建议使用deepseek
 
 ### 3. 配置自定义词典
 
 在 `custom_words.py` 中添加领域专有名词：
 
-\`\`\`python
+
 custom_words = [
     "唐门",
     "唐三", 
@@ -69,13 +77,13 @@ custom_words = [
     "蓝银草",
     # 添加更多专有名词...
 ]
-\`\`\`
+
 
 ### 4. 运行 RAG 系统
 
-\`\`\`bash
+
 python main.py
-\`\`\`
+
 
 系统会自动：
 - ✓ 加载文档并分块
@@ -85,9 +93,9 @@ python main.py
 
 ### 5. 生成知识图谱
 
-\`\`\`bash
+
 python build_knowledge_graph.py
-\`\`\`
+
 
 生成文件：
 - `knowledge_graph.html` - 交互式网页（推荐）
@@ -96,7 +104,7 @@ python build_knowledge_graph.py
 
 ### 交互式问答
 
-\`\`\`
+
 请输入您的问题（输入 'quit' 退出）: 唐三是谁？
 
 🔍 检索到 3 个相关文档片段
@@ -111,7 +119,7 @@ python build_knowledge_graph.py
 📚 信息来源:
 • 斗罗大陆_第1章.txt
 • 斗罗大陆_第2章.txt
-\`\`\`
+
 
 ### 知识图谱浏览
 
@@ -172,7 +180,7 @@ python build_knowledge_graph.py
 
 ### config.py
 
-\`\`\`python
+
 # 模型配置
 EMBEDDING_MODEL_NAME = "/path/to/bge-large-zh-v1.5"  # 本地模型路径
 EMBEDDING_DIMENSION = 1024  # bge-large-zh-v1.5 的向量维度
@@ -194,7 +202,7 @@ LLM_MAX_TOKENS = 1000
 # 知识图谱配置
 KG_MAX_ENTITIES = 500  # 最多展示实体数
 KG_MIN_ENTITY_FREQ = 2  # 实体最小出现次数
-\`\`\`
+
 
 ## 📊 评分系统
 
@@ -202,10 +210,10 @@ KG_MIN_ENTITY_FREQ = 2  # 实体最小出现次数
 
 系统使用余弦相似度计算查询与文档的语义相关性：
 
-\`\`\`
+
 相似度 = cos(query_vector, doc_vector)
 范围: [-1, 1]，通常在 [0, 1] 之间
-\`\`\`
+
 
 **评分解释**：
 - 0.8 - 1.0：高度相关
@@ -217,7 +225,7 @@ KG_MIN_ENTITY_FREQ = 2  # 实体最小出现次数
 
 ### 自定义 LLM 提供商
 
-\`\`\`python
+
 from generator import Generator
 
 # 使用 OpenAI
@@ -225,20 +233,20 @@ generator = Generator(provider="openai", model="gpt-4")
 
 # 使用 Anthropic
 generator = Generator(provider="anthropic", model="claude-3-opus-20240229")
-\`\`\`
+
 
 ### 批量文档处理
 
-\`\`\`python
+
 from rag_system import RAGSystem
 
 rag = RAGSystem()
 rag.load_documents("documents/")  # 自动加载所有 .txt 文件
-\`\`\`
+
 
 ### 导出知识图谱数据
 
-\`\`\`python
+
 from knowledge_graph import KnowledgeGraph
 
 kg = KnowledgeGraph()
@@ -249,25 +257,36 @@ kg.export_json("output/graph.json")
 
 # 导出为 GraphML（可用于 Gephi 等工具）
 kg.export_graphml("output/graph.graphml")
-\`\`\`
+
 
 ## 📁 项目结构
 
-\`\`\`
+
 scripts/
+
 ├── config.py                    # 配置文件
+
 ├── custom_words.py              # 配置专有词
+
 ├── text_processor.py            # 文本处理（jieba 分词）
+
 ├── retriever.py                 # 检索器（bge-large-zh-v1.5）
+
 ├── reranker.py                  # 重排序器
+
 ├── generator.py                 # LLM 生成器
+
 ├── cache_manager.py             # 缓存管理
+
 ├── knowledge_graph.py           # 知识图谱构建
+
 ├── rag_system.py                # RAG 系统主类
+
 ├── main.py                      # 主程序入口
+
 ├── build_knowledge_graph.py     # 知识图谱生成脚本
 
-\`\`\`
+
 
 ## 🐛 常见问题
 
